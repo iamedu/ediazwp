@@ -29,9 +29,9 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
       },
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass']
+      less: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        tasks: ['less']
       },
       livereload: {
         files: [
@@ -124,20 +124,15 @@ module.exports = function (grunt) {
         }]
       }
     },
-    compass: {
-      options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: '<%= yeoman.app %>/components',
-        relativeAssets: true
+    less: {
+      development: {
+        files: {
+          '.tmp/styles/bootstrap.css' : 'app/styles/bootstrap.less'
+        }
       },
-      dist: {},
-      server: {
-        options: {
-          debugInfo: true
+      production: {
+        files: {
+          '.tmp/styles/bootstrap.css' : 'app/styles/bootstrap.less'
         }
       }
     },
@@ -265,7 +260,7 @@ module.exports = function (grunt) {
   grunt.registerTask('server', [
     'clean:server',
     'coffee:dist',
-    'compass:server',
+    'less:development',
     'livereload-start',
     'connect:livereload',
     'open',
@@ -275,7 +270,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'coffee',
-    'compass',
+    'less:development',
     'connect:test',
     'karma'
   ]);
@@ -285,12 +280,12 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'coffee',
-    'compass:dist',
+    'less:production',
     'useminPrepare',
     'imagemin',
-    'cssmin',
     'htmlmin',
     'concat',
+    'cssmin',
     'copy',
     'cdnify',
     'ngmin',
