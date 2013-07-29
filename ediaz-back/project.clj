@@ -19,7 +19,8 @@
                  [ring-anti-forgery "0.2.1"]
                  [clj-rss "0.1.3"]
                  [com.novemberain/validateur "1.2.0"]
-                 [lobos "1.0.0-beta1"]]
+                 [lobos "1.0.0-beta1"]
+                 [clj-time "0.5.1"]]
   :plugins [[lein-ring "0.8.5"]]
   :ring {:handler ediaz-back.handler/war-handler
          :init    ediaz-back.handler/init
@@ -29,5 +30,6 @@
                        :stacktraces?  false
                        :auto-reload?  false}}
    :dev {:dependencies [[ring-mock "0.1.5"]
-                        [ring/ring-devel "1.1.8"]]}}
+                        [ring/ring-devel "1.1.8"]
+                        [midje "1.5.1"]]}}
   :min-lein-version "2.0.0")
