@@ -2,7 +2,7 @@
 
 angular.module('ediazFrontApp')
   .controller('MainCtrl', function ($scope) {
-    var sections, 
+    var sections,
         nothings;
 
     sections = {
@@ -44,6 +44,6 @@ angular.module('ediazFrontApp')
     $scope.sections = sections;
 
     //Bootstrap stuff
-    $('.tag').tooltip();
+    jQuery('.tag').tooltip();
 
   });
