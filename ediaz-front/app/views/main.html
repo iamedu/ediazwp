@@ -1,37 +1,207 @@
-<div class="container">
-    <div class="row">
-        <div class="span12">
-            <div class="page-header">
-                <h1>Eduardo Díaz <small>Architect at Lucasian Labs</small></h1>
+<div class="row tag-row">
+    <div class="col-lg-3">
+        <span class="tag" ng-click="toggleSection('developer')" ng-class="{'tag-warning': sections.developer.selected}" data-title="Data about me, the developer" data-placement="bottom">
+            The Developer
+        </span>
+    </div>
+    <div class="col-lg-3">
+        <span class="tag" ng-click="toggleSection('projects')" ng-class="{'tag-info': sections.projects.selected}" data-title="Description of some of my projects" data-placement="bottom">
+            The Projects
+        </span>
+    </div>
+    <div class="col-lg-3">
+        <span class="tag" ng-click="toggleSection('technology')" ng-class="{'tag-success': sections.technology.selected}" data-title="Technology that I use and find really interesting, most of it should be used in this site." data-placement="bottom">
+            The Technology
+        </span>
+    </div>
+    <div class="col-lg-3">
+        <span class="tag" ng-click="toggleSection('experiments')" ng-class="{'tag-danger': sections.experiments.selected}" data-title="Some experiments with cool technologies" data-placement="bottom">
+            The Experiments
+        </span>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3" ng-show="!nothingSelected">
+        <div class="thumbnail card">
+            <div class="caption">
+                <h3>
+                    Under Construction
+                    <span class="label">Be warned</span>
+                </h3>
+                <p>
+                    This thing is under construction, so don't expect everything or even anything to work correctly.
+                    Wanna see a greatly engineered site? Check <a href="http://www.twitter.com">this</a> out
+                </p>
             </div>
-        </div>
-        <div class="navbar navbar navbar-inverse">
-            <a class="navbar-brand" href="#">@ediazr</a>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Projects</a></li>
-            </ul>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-9">
-            <div class="thumbnail">
-                <div class="caption">
-                    <h3>About this site</h3>
-                </div>
+    <div class="col-lg-3" ng-show="sections.developer.selected">
+        <div class="thumbnail card">
+            <img src="images/iamedu.jpg" />
+            <div class="caption">
+                <h3>
+                    @iamedu
+                    <span class="label label-warning">Dev</span>
+                </h3>
+                <p>
+                My name is Eduardo Díaz. I am a developer and architect at Lucasian Labs.
+                </p>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="thumbnail">
-                <img src="images/iamedu.jpg" />
-                <div class="caption">
-                    <h3>About me</h3>
-                    <p>
-                        My name is Eduardo Díaz,
-                    </p>
-                </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.projects.selected">
+        <div class="thumbnail card">
+            <div class="caption">
+                <h3>
+                    Personal web
+                    <span class="label label-info">Proj</span>
+                </h3>
+                <p>
+                    This website exists for three main reasons...
+                </p>
+                <ul>
+                    <li>As a first attempt to use Clojure for something interesting</li>
+                    <li>As my online CV</li>
+                    <li>As a platform to test whatever I find interesting</li>
+                </ul>
+                <p>
+                    This is open source software, and you can find it on github. Check it out over <a href="https://github.com/iamedu/ediazwp">here</a>
+                </p>
             </div>
+        </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.developer.selected">
+        <div class="thumbnail card">
+            <div class="caption">
+                <h3>
+                    My interests
+                    <span class="label label-warning">Dev</span>
+                </h3>
+                <ul>
+                    <li>Distributed, Parallel and Concurrent Programming</li>
+                    <li>Usability and the Human-Machine interface</li>
+                    <li>Solving REAL problems</li>
+                    <li>Great quality software</li>
+                    <li>Data Analysis</li>
+                    <li>Machine learning</li>
+                    <li>Clojure and LISP</li>
+                    <li>Functional programming</li>
+                    <li>The JVM</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.projects.selected">
+        <div class="thumbnail card">
+            <div class="caption">
+                <h3>
+                    Funding System
+                    <span class="label label-info">Proj</span>
+                </h3>
+                <p>
+                I worked as the lead developer and architect of a funding system for the Mexican Government. It was quite a success, some of it's key highlights are:
+                </p>
+                <ul>
+                    <li>Supported 20 different funding initiatives, just through configuration</li>
+                    <li>Configurable and scriptable</li>
+                    <li>Highest citizen participation ever</li>
+                </ul>
+                <p>
+                You can check it out, and maybe even ask for funding <a href="http://www.sistemaemprendedor.gob.mx/emprende/">here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.technology.selected">
+        <div class="thumbnail card">
+            <img src="images/clojure.png" />
+            <div class="caption">
+                <h3>
+                    Clojure
+                    <span class="label label-success">Tech</span>
+                </h3>
+                <p>
+                    An amazing language, it is a functional Lisp dialect for the JVM. It's key features for me:
+                </p>
+                <ul>
+                    <li>Strong sense of immutability</li>
+                    <li>The time model</li>
+                    <li>A modern Lisp</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.developer.selected">
+        <div class="thumbnail card">
+            <div class="caption">
+                <h3>
+                    My languages
+                    <span class="label label-warning">Dev</span>
+                </h3>
+                <ul>
+                    <li>Java</li>
+                    <li>Javascript</li>
+                    <li>Clojure</li>
+                    <li>Scala</li>
+                    <li>C/C++</li>
+                    <li>Python</li>
+                    <li>Perl</li>
+                    <li>Ruby</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.technology.selected">
+        <div class="thumbnail card">
+            <img src="images/angular.png" />
+            <div class="caption">
+                <h3>
+                    AngularJS
+                    <span class="label label-success">Tech</span>
+                </h3>
+                <p>
+                    This site uses AngularJS, it's an amazing technology that enhances html with semantics for webapps. It's HTML 5 as it should have been.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3" ng-show="sections.developer.selected">
+        <div class="thumbnail card">
+            <div class="caption">
+                <h3>
+                    My OS
+                    <span class="label label-warning">Dev</span>
+                </h3>
+                <p>
+                    I have used Linux for everyday work for about 10 years, I also enjoy working on Mac OS X. In the end what I really like is the UNIX philosophy and simplicity. My current setup includes:
+                </p>
+                <ul>
+                    <li>Arch Linux</li>
+                    <li>Autojump</li>
+                    <li>tmux</li>
+                    <li>Vim, Vundle + Friends</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12" ng-show="nothingSelected">
+        <div ng-show="selectedNothing=='nothingValues'" style="text-align: center">
+            <h1>The value of values</h1>
+            <p>There, learn something useful.</p>
+            <iframe width="560" height="315" src="//www.youtube.com/embed/-6BsiVyC1kM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="jumbotron" ng-show="selectedNothing=='nothingHello'">
+            <h1>Hello, world!</h1>
+            <p>
+            This thing is called "jumbotron".
+            </p>    
+            <p><a class="btn btn-primary btn-large" href="http://www.wikihow.com/Tell-Your-Parents-You-Want-to-Go-to-University">Learn more</a></p>
+        </div>
+        <div ng-show="selectedNothing=='nothingCivilized'" style="text-align: center">
+            <p>
+            Is it the right time for the parentheses?
+            </p>
+            <img src="http://imgs.xkcd.com/comics/lisp_cycles.png" rel="An elegant weapon" />
         </div>
     </div>
 </div>

@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost'
+        hostname: '0.0.0.0'
       },
       livereload: {
         options: {
@@ -127,12 +127,16 @@ module.exports = function (grunt) {
     less: {
       development: {
         files: {
-          '.tmp/styles/bootstrap.css' : 'app/styles/bootstrap.less'
+          '.tmp/styles/bootstrap.css' : 'app/styles/bootstrap.less',
+          '.tmp/styles/tags.css' : 'app/styles/tags.less',
+          '.tmp/styles/cards.css' : 'app/styles/cards.less'
         }
       },
       production: {
         files: {
-          '.tmp/styles/bootstrap.css' : 'app/styles/bootstrap.less'
+          '.tmp/styles/bootstrap.css' : 'app/styles/bootstrap.less',
+          '.tmp/styles/tags.css' : 'app/styles/tags.less',
+          '.tmp/styles/cards.css' : 'app/styles/cards.less'
         }
       }
     },
@@ -182,7 +186,7 @@ module.exports = function (grunt) {
     htmlmin: {
       dist: {
         options: {
-          /*removeCommentsFromCDATA: true,
+          removeCommentsFromCDATA: true,
           // https://github.com/yeoman/grunt-usemin/issues/44
           //collapseWhitespace: true,
           collapseBooleanAttributes: true,
@@ -190,7 +194,7 @@ module.exports = function (grunt) {
           removeRedundantAttributes: true,
           useShortDoctype: true,
           removeEmptyAttributes: true,
-          removeOptionalTags: true*/
+          removeOptionalTags: true
         },
         files: [{
           expand: true,
